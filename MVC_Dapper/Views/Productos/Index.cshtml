@@ -1,0 +1,118 @@
+﻿@model IEnumerable<Producto>
+@{
+    ViewData["Title"] = "Mantenimiento Producto";
+}
+
+
+<div class="col-sm-12">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-sm-5">
+                    <h3 style="margin-top: 14px">
+                        Mantenimiento de Productos
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel" style="padding: 0">
+        <div class="panel-body" style="padding: 12px 10px">
+            <div class="row">
+              @*   <div class="col-sm-5">
+                    <div class="panel" id="panel-estado_checkList" style="padding-bottom:10px">
+                        <h5 class="text-on-pannel text-primary" style="margin-top: -20px; color: #1805ad"><strong class="text">Filtro:</strong></h5>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group form-flex">
+                                    <label for="" class="col-sm-5">Estado CheckList:</label>
+                                    <div class="col-sm-7">
+                                        <select name="Estado" id="Estado" class="form-control" asp-items="ViewBag.Estado"></select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> *@
+                <div class="col-sm-4" style="padding-left:30px;padding-right:20px">
+                    <button class="btn btn-outline-primary" name="btnAgregar" id="btnAgregar">
+                        @* <i class="fa fa-filter"></i> *@
+                        @* <i class="fa fa-search"></i> *@
+                        <p style="margin-bottom: 0px">Agregar Producto</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr style="margin: 10px 0;" />
+    <div class="table-responsive">
+        <table class="table table-hover table-striped table-bordered table-condensed compact" data-select="true" data-navigator="true" id="DM_ListProductos">
+            <thead>
+                <tr>
+                    <th width="200px"></th>
+                    <th>Id Producto</th>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    @* <th width="100px">Ultimo Usuario</th> *@
+                </tr>
+            </thead>
+         @*    <tfoot>
+                <tr>
+                    <td colspan="3" class="text-right" style="padding: 12px 0;"><span style="font-size: 1.8rem; font-weight: bold; padding-right: 25px;">Puntos de Venta:</span></td>
+                    <td colspan="1"><span style="font-size: 1.8rem; font-weight: bold" id="TotalPtoVenta"></span></td>
+                </tr>
+            </tfoot> *@
+        </table>
+    </div>
+
+</div>
+
+
+
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true" id="modalAgregarProducto" data-width="50%">
+    <div class="modal-header" style="background:#b7dbe6">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title text-center" id="tituloModalActPri">Agregar Producto</h4>
+    </div>
+    <div class="modal-body">
+        <div class="col-sm-12">
+            <div class="panel" style="padding-left:15px;padding-right:15px">
+                <div class="row">
+                  @*   <div class="col-sm-5">
+                        <div class="form-group">
+                            <label for="lblNombreProducto" class="col-sm-4" style="padding-right:3px">Producto: </label>
+                            <div class="col-sm-8">
+                                <input type="text" name="nombreProducto" id="nombreProducto" readonly class="form-control" />
+                            </div>
+                        </div>
+                    </div> *@
+                    @*   <div class="col-sm-12">
+                    <div class="table-responsive" style="border:1px solid #ddd;min-height:270px;max-height:270px;overflow-y:scroll">
+                    <table class="table table-bordered" data-select="true" data-navigator="true">
+                    <thead>
+                    <tr>
+                    <th>Actividad</th>
+                    <th>Estado</th>
+                    <th>Calificacion</th>
+
+                    </tr>
+                    </thead>
+                    <tbody id="Tb_ListaActividadesPrincipales"></tbody>
+                    </table>
+                    </div>
+                    </div> *@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@* @await Html.PartialAsync("Productos/_AgregarProducto") *@
+@section Scripts
+{
+
+    <script src="~/scripts/producto.js"></script>
+}
